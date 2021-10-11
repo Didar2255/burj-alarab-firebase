@@ -26,3 +26,18 @@
     color: rgba(255, 255, 255, 0.877);
     font-weight: bold;
   }
+  .user-name{
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+      margin-left: 10px;
+  }
+  .logout-btn{
+      margin-left: 20px;
+      border: none;
+      background-color: darkred;
+      color: white;
+      padding: 5px;
+      border-radius: 4px;
+      font-size: 14px;
+  }
