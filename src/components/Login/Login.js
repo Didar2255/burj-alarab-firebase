@@ -1,10 +1,20 @@
 import React, { useContext } from 'react';
+import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../Hooks/useAuth';
 import './LogIn.css'
 
 
 const Login = () => {
-    const { googleLogIn, hendelForm } =useAuth()
+    const location = useLocation()
+    const history = useHistory()
+    const { googleLogIn, hendelForm } = useAuth()
+    const redirect_uri = location.state?.form || '/home'
+    const hendelGoogleSignIn = () => {
+        googleLogIn()
+            .then(result => {
+                history.push(redirect_uri)
+            })
+    }
     return (
 
         <div className='form'>
@@ -16,7 +26,7 @@ const Login = () => {
                     <p>Password :</p>
                     <input type="password" name="" id="" /><br /><br />
                     <input type="submit" value="Log In" />
-                    <button className='button' onClick={googleLogIn}>Google Log In</button>
+                    <button className='button' onClick={hendelGoogleSignIn}>Google Log In</button>
                 </form>
 
             </div>

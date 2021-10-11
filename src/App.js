@@ -10,6 +10,7 @@ import Login from './components/Login/Login';
 import Book from './components/Book/Book';
 import Header from './components/Header/Header';
 import AuthProvider from './components/AuthProvider/AuthProvider';
+import PrivetRoute from './components/PrivetRoute/PrivetRoute';
 
 function App() {
   return (
@@ -17,15 +18,15 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route path="/home">
+          <PrivetRoute path="/home">
             <Home />
-          </Route>
+          </PrivetRoute>
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/book/:bedType">
+          <PrivetRoute path="/book/:bedType">
             <Book />
-          </Route>
+          </PrivetRoute>
           <Route exact path="/">
             <Home />
           </Route>
